@@ -2,20 +2,21 @@
 
 import React from "react";
 
-export default class starButton extends React.Component {
-  constructor(props){
-      super(props);
-      this.handleClick = this.handleClick.bind(this);
+export default class Stars extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(){
-      this.props.action(this.props.name);
+  handleClick() {
+    this.props.action(this.props.stars);
   }
- 
-  render(){
-      return <button
-          className="btn btn-primary"
-          onClick={this.handleClick}>Click to add likes</button>;
+
+  render() {
+    return (
+      <button className="btn btn-primary" onClick={this.handleClick}>
+        {this.props.stars} {this.props.count}
+      </button>
+    );
   }
- 
 }
