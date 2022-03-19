@@ -1,6 +1,7 @@
 // b. Movie – a component that represents movie data (i.e. image, synopsis, rating, etc…)
 
 import React from "react";
+import Stars from "./stars";
 
 export default class Movie extends React.Component {
     constructor(props){
@@ -28,6 +29,7 @@ export default class Movie extends React.Component {
               <br />
               <br />
               <h6>Rate this movie</h6>
+              <Stars />
               {/* review form */}
             </div>
           </div>

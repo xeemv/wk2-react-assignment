@@ -1,7 +1,7 @@
 // e.	Review – A text review a user can leave on a movie.
 
 import React from "react";
-import Rating from "./rating";
+// import Rating from "./rating";
 import Stars from "./stars";
 
 export default class Review extends React.Component {
@@ -18,7 +18,7 @@ export default class Review extends React.Component {
           {this.props.content}
         </div>
         <div className="card-footer">
-          <Rating />
+          <Stars />
         </div>
       </div>
     );
