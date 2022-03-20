@@ -2,11 +2,17 @@
 
 import React from "react";
 import Stars from "./stars";
+import Review from "./review";
+import ReviewList from "./reviewList-container";
+import ReviewForm from "./reviewForm";
+// import { Card } from 'react-bootstrap';
+
 
 export default class Movie extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            id: props.id,
             Title: props.Title,
             Starring: props.Starring,
             Release: props.Release,
@@ -17,23 +23,25 @@ export default class Movie extends React.Component {
 
     render() {
       return (
+        // <Card style={{width: '28rem'}}>
         <div className="card-group">
           <div className="card">
-            <img src={this.props.Image} className="card-img-top" alt="{this.props.Title" width="300"/>
+            <img src={this.props.Image} className="card-img-top" alt="{this.props.Title" height="25%" />
             <div className="card-body">
+              <h5 className="card-title">{this.props.id}</h5>
               <h5 className="card-title">{this.props.Title}</h5>
               <p className="card-text">{this.props.Starring}</p>
               <p className="card-text">{this.props.Release}</p>
               <p className="card-text">{this.props.Synposis}</p>
-              <p class="card-text"><small class="text-muted">Rate this movie</small></p>
-              <br />
-              <br />
+              <p className="card-text"><small className="text-muted">Rate this movie</small></p>
               <h6>Rate this movie</h6>
+              {/* <ReviewList /> */}
               <Stars />
-              {/* review form */}
+              
             </div>
           </div>
         </div>
+        // </Card>
       );
     }
 }

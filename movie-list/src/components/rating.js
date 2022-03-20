@@ -1,4 +1,65 @@
-// import React from "react";
+import React from "react";
+import Stars from "./stars";
+
+
+export default class Rating extends React.Component {
+  constructor(props){
+    this.State ={
+      counts: {},
+      mostVoted: 0,
+      value: props.value,
+    };
+
+    this.countClicks = this.countClicks.bind(this);
+  }
+
+
+  countClicks(value){
+    this.setState( state => {
+      state.counts[value] += 1;
+      return this.state;
+    });
+  }
+
+  render(){
+    return(
+      <div className="star-rating">
+        <div>
+          <h3>{this.state.mostVoted}</h3>
+        <Stars
+        value="one"
+        mostVoted={this.state.counts.one}
+        action = {this.countClicks}
+        />
+        </div>
+      </div>
+    )
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import Stars from '../components/stars';
 
 

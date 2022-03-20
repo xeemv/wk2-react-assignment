@@ -1,77 +1,19 @@
-// e.	Review – A text review a user can leave on a movie.
+// // e.	Review – A text review a user can leave on a movie.
 
-import React from "react";
-// import Rating from "./rating";
-import Stars from "./stars";
+// import React from "react";
+// // import Rating from "./rating";
+// import Stars from "./stars";
+// import ReviewForm from "./reviewForm";
 
-export default class Review extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        reviewData: {
-            name: "",
-            review: ""
-        }
-    }
-}
-
-onSubmitButtonClicked = () => {
-  const reviews = {
-      name: this.state.reviewData.name,
-      review: this.state.reviewData.review,
-  }
-  this.props.onSubmit(reviews)
-}
-
-handleNameInputChanged = (event) => {
-  this.setState( state => ({ reviewData: { ...state.reviewData, name: event.target.value } }) )
-}
-
-handleReviewInputChanged = (event) => {
-  this.setState( state => ({ reviewData: { ...state.reviewData, review: event.target.value } }) )
-}
-
-  render() {
-    // let reviews = []
-    // implement star ratings
-
-    return (
-      <div className="review-form">
-        <div className="mb-3">
-          <label for="exampleFormControlInput1" className="form-label">
-            Name:
-          </label>
-          <input
-            type="name"
-            className="form-control"
-            id="exampleFormControlInput1"
-            placeholder="reviewerName"
-            value={this.state.reviewData.name} 
-            onChange={this.handleNameInputChanged}
-          />
-        </div>
-        <div className="mb-3">
-          <label for="exampleFormControlTextarea1" className="form-label">
-            Review:
-          </label>
-          <textarea
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            value={this.state.reviewData.review} 
-            onChange={this.handleReviewInputChanged}
-          ></textarea>
-          <Stars />
-          <button className="btn btn-primary" type="submit" value="Submit" onClick={this.onSubmitButtonClicked}>Submit</button>
-        </div>
-      </div>
-    );
-  }
-}
-
-// https://codesource.io/fix-jsx-expressions-must-have-one-parent-element/
-
-
+// export default class Review extends React.Component {
+//   render(){
+//     return(
+//       <div className="col">
+//         { (this.props.reviews !== null) ? this.props.reviews.name : "No Review Submitted"}
+//       </div>
+//     )
+//   }
+// }
 
   // render() {
   //   return (
