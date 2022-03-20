@@ -4,11 +4,11 @@ import React from "react";
 // import StarCounter from "./star-counter";
 
 export default class Stars extends React.Component {
-constructor(props){
-  super(props);
+// constructor(props){
+//   super(props);
 
   
-}
+// }
 
 
   render() {

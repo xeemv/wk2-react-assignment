@@ -53,7 +53,7 @@ export default class StarContainer extends React.Component{
             count = {this.state.counts.one}
             action = {this.countClicks}
             />
-            <StarCounter 
+            {/* <StarCounter 
             name="two" 
             count = {this.state.counts.two}
             action = {this.countClicks}
@@ -72,7 +72,7 @@ export default class StarContainer extends React.Component{
             name="five" 
             count = {this.state.counts.five}
             action = {this.countClicks}
-            />
+            /> */}
             </div>
         );
     }
