@@ -1,37 +1,41 @@
 // e.	Review – A text review a user can leave on a movie.
 
 import React from "react";
-// import Rating from "./rating";
-import Stars from "./stars";
+import StarContain from "./star-contain";
 
 
-export default class Review extends React.Component {
-  constructor(props){
-    super(props);
 
-    this.handleClick = this.handleClick.bind(this);
-  }
-
- handleClick = () => {
-  this.props.action(this.props.name);
- }
-
+export default class Review extends  React.Component {
+  onTrigger = (event) => {
+    this.props.handleCallback(event.target.review.value);
+    event.preventDefault();
+  };
 
   render() {
-    // let review = '';
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <StarContain />
+        <br />
+        <form onSubmit={this.onTrigger}>
+          <label className="form-label" id="rname">
+            Reviewer's Name:
+          </label>
+          <input
+            className="form-control"
+            placeholder="Name"
+            required
+            // value={this.state.reviewData.name}
+            // onChange={this.handleNameInputChanged}
+          />
+          <label className="form-label" id="mreview">
+            Movie Review:
+          </label>
           <textarea
             className="form-control"
-            type="text"
-            name="review"
+            // value={this.state.reviewData.review}
+            // onChange={this.handleReviewInputChanged}
             placeholder="Leave your movie review here......"
           />
-          <br />
-          <button className="btn btn-primary" type="submit" value="Submit" onClick={this.handleClick}>
-            Submit
-          </button>
         </form>
       </div>
     );

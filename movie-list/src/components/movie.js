@@ -5,6 +5,7 @@ import StarContain from "./star-contain";
 import Review from "./review";
 import ReviewList from "./reviewList-container";
 import ReviewForm from "./reviewForm";
+import Header from "./header";
 // import { Card } from 'react-bootstrap';
 
 
@@ -24,29 +25,30 @@ export default class Movie extends React.Component {
     render() {
       return (
         // <Card style={{width: '28rem'}}>
+        <>
+        <Header />
         <div className="card-group">
-          <div className="card">
             <img
               src={this.props.Image}
               className="card-img-top"
               alt="{this.props.Title"
-              height="25%"
+              height="15%"
             />
-            <div className="card-body">
-              <h5 className="card-title">{this.props.id}</h5>
-              <h5 className="card-title">{this.props.Title}</h5>
+            <div className="card-body" id="movie-info">
+              <h3 className="card-title">{this.props.id}</h3>
+              <h2 className="card-title">{this.props.Title}</h2>
               <p className="card-text">{this.props.Starring}</p>
               <p className="card-text">{this.props.Release}</p>
               <p className="card-text">{this.props.Synposis}</p>
               {/* <p className="card-text"><small className="text-muted">Rate this movie</small></p> */}
               <h3 className="rateMovie">Rate this movie</h3>
-              <ReviewList />
+              <ReviewForm />
               {/* <StarContain /> */}
               <br></br>
               <h3>Thank you for rating this movie.</h3>
             </div>
-          </div>
         </div>
+        </>
         // </Card>
       );
     }

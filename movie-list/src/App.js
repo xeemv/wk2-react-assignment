@@ -3,6 +3,7 @@ import './App.css';
 import MovieList from '../src/components/movieList-container';
 import StarContain from './components/star-contain';
 import ReviewForm from './components/reviewForm';
+import ReviewList from './components/reviewList-container';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
        <MovieList /> 
         {/* <StarContain /> */}
         {/* <ReviewForm /> */}
+      {/* <ReviewList /> */}
       </body>
     </div>
   );

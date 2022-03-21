@@ -3,10 +3,12 @@
 import React from "react";
 // import Rating from "./rating";
 import Stars from "./stars";
+import StarContain from "./star-contain";
 import Review from "./review";
 import MovieList from "./movieList-container";
 import Movie from "./movie";
 import Header from "./header";
+import ReviewList from "./reviewList-container";
 
 export default class ReviewForm extends React.Component {
   constructor(props) {
@@ -17,14 +19,15 @@ export default class ReviewForm extends React.Component {
     this.state = {
       // any properties we want to be available in the state of our post.js file
       reviews: props.reviews,
-      content: props.content,
+      // content: props.content,
       // after this, comment out all of our props object w/in the render
       count: 0,
     };
   }
 
+
   render() {
-    let reviews;
+    let reviews = [];
     if (this.state.reviews) {
       reviews = this.state.reviews.map((review, index) => (
         <Review key={index} {...review} />
@@ -32,19 +35,16 @@ export default class ReviewForm extends React.Component {
     }
 
     return (
-      <div className="card w-75">
-        <div className="card-header bg-primary text-white">Review:</div>
-        <div className="card-body">{this.state.content}</div>
-        <div className="card-footer">
-          <Stars />
+      <div className="card-header w-75 text-black" id="review-card">
+        <div className="card-body">
+        <ReviewList />
+        
+        {reviews}
         </div>
       </div>
     );
   }
 }
-
-
-
 
 
 

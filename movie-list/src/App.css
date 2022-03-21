@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+#review-card{
+  margin-left: 15%;
+  background-color: blanchedalmond;
+}
+#movie-info{
+  background-color: blanchedalmond;
+  /* font-size: 2rem; */
+}
+#rname{
+  margin-right: 85%;
+}
+#mreview{
+  margin-right: 87%;
+}
