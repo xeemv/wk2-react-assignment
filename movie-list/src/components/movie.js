@@ -1,7 +1,7 @@
 // b. Movie – a component that represents movie data (i.e. image, synopsis, rating, etc…)
 
 import React from "react";
-import Stars from "./stars";
+import StarContain from "./star-contain";
 import Review from "./review";
 import ReviewList from "./reviewList-container";
 import ReviewForm from "./reviewForm";
@@ -26,18 +26,24 @@ export default class Movie extends React.Component {
         // <Card style={{width: '28rem'}}>
         <div className="card-group">
           <div className="card">
-            <img src={this.props.Image} className="card-img-top" alt="{this.props.Title" height="25%" />
+            <img
+              src={this.props.Image}
+              className="card-img-top"
+              alt="{this.props.Title"
+              height="25%"
+            />
             <div className="card-body">
               <h5 className="card-title">{this.props.id}</h5>
               <h5 className="card-title">{this.props.Title}</h5>
               <p className="card-text">{this.props.Starring}</p>
               <p className="card-text">{this.props.Release}</p>
               <p className="card-text">{this.props.Synposis}</p>
-              <p className="card-text"><small className="text-muted">Rate this movie</small></p>
-              <h6>Rate this movie</h6>
-              {/* <ReviewList /> */}
-              <Stars />
-              
+              {/* <p className="card-text"><small className="text-muted">Rate this movie</small></p> */}
+              <h3 className="rateMovie">Rate this movie</h3>
+              <ReviewList />
+              {/* <StarContain /> */}
+              <br></br>
+              <h3>Thank you for rating this movie.</h3>
             </div>
           </div>
         </div>

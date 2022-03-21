@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import MovieList from '../src/components/movieList-container';
-import StarContainer from './components/star-container';
+import StarContain from './components/star-contain';
+import ReviewForm from './components/reviewForm';
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
         </a>
       </header> */}
       <body>
-        {/* <MovieList /> */}
-        <StarContainer />
+       <MovieList /> 
+        {/* <StarContain /> */}
+        {/* <ReviewForm /> */}
       </body>
     </div>
   );

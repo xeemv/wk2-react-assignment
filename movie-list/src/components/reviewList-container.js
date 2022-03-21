@@ -10,11 +10,17 @@ export default class ReviewList extends React.Component {
     this.state = {
       totalReviews: props.totalReviews,
     };
+
+    
   }
 
   handleCallReview = (allReview) => {
     this.setState({ totalReviews: allReview });
   };
+
+  
+  
+
 
   render() {
     let totalReviews = this.state;
