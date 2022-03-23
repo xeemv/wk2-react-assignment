@@ -40,6 +40,8 @@
 #review-card{
   margin-left: 15%;
   background-color: blanchedalmond;
+  border-style: groove;
+  border-radius: 5px;
 }
 #movie-info{
   background-color: blanchedalmond;

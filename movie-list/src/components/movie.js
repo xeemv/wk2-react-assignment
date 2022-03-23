@@ -31,8 +31,8 @@ export default class Movie extends React.Component {
             <img
               src={this.props.Image}
               className="card-img-top"
-              alt="{this.props.Title"
-              height="15%"
+              alt={this.props.Title}
+              height="100%"
             />
             <div className="card-body" id="movie-info">
               <h3 className="card-title">{this.props.id}</h3>

@@ -4,9 +4,12 @@ import MovieList from '../src/components/movieList-container';
 import StarContain from './components/star-contain';
 import ReviewForm from './components/reviewForm';
 import ReviewList from './components/reviewList-container';
+import Review from './components/review';
 
 function App() {
   return (
+    // <body>
+    <>
     <div className="App">
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -22,13 +25,17 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <body>
+     
        <MovieList /> 
         {/* <StarContain /> */}
         {/* <ReviewForm /> */}
       {/* <ReviewList /> */}
-      </body>
+      {/* <Review/> */}
+     
     </div>
+    {/* </body> */}
+  </>
+  
   );
 }
 

@@ -11,40 +11,113 @@ import Header from "./header";
 import ReviewList from "./reviewList-container";
 
 export default class ReviewForm extends React.Component {
-  constructor(props) {
-    // same props that we added to our jsx
-    super(props);
-    // have the 1st line passed props to the super constructor
-    // always need to call the super constructor and pass the props through it
-    this.state = {
-      // any properties we want to be available in the state of our post.js file
-      reviews: props.reviews,
-      // content: props.content,
-      // after this, comment out all of our props object w/in the render
-      count: 0,
-    };
-  }
 
-
-  render() {
-    let reviews = [];
-    if (this.state.reviews) {
-      reviews = this.state.reviews.map((review, index) => (
-        <Review key={index} {...review} />
-      ));
-    }
-
-    return (
-      <div className="card-header w-75 text-black" id="review-card">
-        <div className="card-body">
-        <ReviewList />
-        
-        {reviews}
-        </div>
-      </div>
+  render(){
+    let allReviews = [
+      {
+        reviewer: 'Jenny',
+        content: "I love this movie"
+      },
+      {
+        reviews: 'Jenny',
+        content: "Awesome movie"
+      }
+    ];
+  
+    return(
+    <div>
+      <ReviewList {...{allReviews: allReviews, content: "I love this movie"}} />
+      {/* <ReviewList /> */}
+    </div>
     );
   }
 }
+
+//   constructor(props){
+//     super (props);
+//       this.state = {
+//         userName: props.userName,
+//         reviews: props.reviews
+//       }
+//   }
+//   render() {
+//     let reviews = [];
+//       if (this.state.reviews) {
+//         reviews = this.state.reviews.map((review, index) => 
+//           <Review key={index} {...review} />);
+//       } 
+//     return (
+//       <div>
+//         <div>
+//           <Review/>
+//           <br />
+//           <div className="card-body">
+//           {this.state.reviews}
+//           </div>
+//           <button
+//             className="btn btn-outline-success"
+//             value="Submit"
+//             // onClick={this.handleClick}
+//           >
+//             Submit
+//           </button>
+//           {reviews}
+//           <br />
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+
+ 
+ 
+ 
+ 
+ 
+  // constructor(props) {
+  //   // same props that we added to our jsx
+  //   super(props);
+  //   // have the 1st line passed props to the super constructor
+  //   // always need to call the super constructor and pass the props through it
+  //   this.state = {
+  //     // any properties we want to be available in the state of our post.js file
+  //     reviews: props.reviews,
+  //     // content: props.content,
+  //     // after this, comment out all of our props object w/in the render
+  //     count: 0,
+  //   };
+  // }
+
+
+  // render() {
+  //   let reviews = [];
+  //   if (this.state.reviews) {
+  //     reviews = this.state.reviews.map((review, index) => (
+  //       <Review key={index} {...review} />
+  //     ));
+  //   }
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//         allReviews: props.allReviews
+//     }
+//   }
+
+// handleCallback = (reviewData) => { this.setState({allReviews: reviewData}) }
+
+// render(){
+    
+//      let { allReviews } = this.state;
+//      return (
+//       <div className="card-header w-75 text-black" id="review-card">
+//         <div>{allReviews}</div>
+//         <div className="card-body">
+//         <ReviewList handleCallback = {this.handleCallback}/>
+//         </div>
+//       </div>
+//     )
+//   }
+// }
 
 
 

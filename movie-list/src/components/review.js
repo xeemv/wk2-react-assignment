@@ -14,28 +14,26 @@ export default class Review extends  React.Component {
   render() {
     return (
       <div>
-        <StarContain />
+        {/* <StarContain /> */}
         <br />
         <form onSubmit={this.onTrigger}>
-          <label className="form-label" id="rname">
-            Reviewer's Name:
+          {/* <label className="form-label" id="rname">
           </label>
           <input
             className="form-control"
-            placeholder="Name"
+            placeholder="Reviewer's Name:"
             required
             // value={this.state.reviewData.name}
             // onChange={this.handleNameInputChanged}
-          />
+          />{this.props.userName} */}
           <label className="form-label" id="mreview">
-            Movie Review:
           </label>
           <textarea
             className="form-control"
             // value={this.state.reviewData.review}
             // onChange={this.handleReviewInputChanged}
             placeholder="Leave your movie review here......"
-          />
+          />{this.props.reviews}
         </form>
       </div>
     );

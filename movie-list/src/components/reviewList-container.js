@@ -1,6 +1,7 @@
 // d.	ReviewList – a container inside of a Movie that houses Review components.
 import React from "react";
 import Review from "./review";
+import StarContain from "./star-contain";
 import ReviewForm from "./reviewForm";
 // import starButton from "./stars";
 
@@ -9,35 +10,103 @@ export default class ReviewList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allReviews: props.allReviews,
+      reviews: props.reviews,
+      content: props.content,
+      count: 0,
     };
+    this.onTrigger = this.onTrigger.bind(this);
   }
-
-  handleCallback = (reviewData) => {
-    this.setState({ allReviews: reviewData });
+  onTrigger = (event) => {
+    this.props.handleCallback(event.target.reviews.value);
+    event.preventDefault();
   };
 
   render() {
-    let { allReviews } = this.state;
+    let allReviews = [];
+    if (this.state.allReviews) {
+      allReviews = this.state.allReviews.map((allReviews, index) => (
+        <Review key={index} {...allReviews} />
+      ));
+    }
 
     return (
       <div>
-        <div>{allReviews}</div>
         <div>
-          <Review handleCallback={this.handleCallback} />
+          <StarContain />
+          <Review />
           <br />
-          <button
-            className="btn btn-outline-success"
-            value="Submit"
-            onClick={this.handleClick}
-          >
-            Submit
-          </button>
+          <div className="card-body">
+            <button className="btn btn-outline-success" value="Submit">
+              Submit
+            </button>
+            <br />
+            <br />
+            <h4>Movie reviews:</h4>
+            <br />
+            { allReviews } {this.state.content}
+          </div>
           <br />
         </div>
       </div>
     );
   }
+}
+
+
+
+
+
+
+
+  //   onTrigger = (event) => { 
+//     this.props.handleCallback(event.target.review.value); 
+//     event.preventDefault(); 
+// } 
+
+//   render() {
+
+//     return (
+//       <div>
+//         <div>
+//           <Review onSubmit = {this.onTrigger} />
+//           <br />
+//           <button
+//             className="btn btn-outline-success"
+//             value="Submit"
+//             // onClick={this.handleClick}
+//           >
+//             Submit
+//           </button>
+//           <br />
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+
+// constructor(props){
+//   super(props);
+//   this.state = {
+//       allReviews: props.allReviews
+//   }
+// }
+
+// handleCallback = (reviewData) => { this.setState({allReviews: reviewData}) }
+
+// render(){
+  
+//   //  let { allReviews } = this.state;
+//    return (
+//     <div className="card-header w-75 text-black" id="review-card">
+//       {/* <div>{allReviews}</div> */}
+//       <div className="card-body">
+//       <ReviewForm />
+//       </div>
+//     </div>
+//   )
+// }
+// }
+
 
   // constructor(props) {
   //   super(props);
@@ -65,7 +134,7 @@ export default class ReviewList extends React.Component {
   //     </div>
   //   );
   // }
-}
+
 
 
 // export default class ReviewForm extends React.Component {
@@ -134,3 +203,4 @@ export default class ReviewList extends React.Component {
 // }
 
 // // https://codesource.io/fix-jsx-expressions-must-have-one-parent-element/
+
