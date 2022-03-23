@@ -5,6 +5,7 @@ import StarContain from './components/star-contain';
 import ReviewForm from './components/reviewForm';
 import ReviewList from './components/reviewList-container';
 import Review from './components/review';
+import Movie from './components/movie';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         >
           Learn React
         </a>
-      </header> */}
+  </header> */}
      
        <MovieList /> 
         {/* <StarContain /> */}

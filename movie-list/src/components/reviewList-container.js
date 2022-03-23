@@ -33,7 +33,7 @@ export default class ReviewList extends React.Component {
       <div>
         <div>
           <StarContain />
-          <Review />
+          <ReviewForm />
           <br />
           <div className="card-body">
             <button className="btn btn-outline-success" value="Submit">
